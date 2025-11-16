@@ -3,14 +3,14 @@ import MediaSlider from "../components/MediaSlider";
 export default function Hero() {
   return (
     <section className="flex flex-col items-center text-center py-20 px-6 bg-amber-50 hover:bgamber-60 overflow-hidden">
-      {/* <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        src="/videos/background.mp4"
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/videos/backgruond1.mp4"
         autoPlay
         loop
         muted
         playsInline
-    /> */}
+    />
     <div className="relative z-10">
         <h1 className="text-4xl sm:text-5xl font-bold mb-4">
         Arecanut Dehusking Machine

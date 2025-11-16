@@ -5,7 +5,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full py-4 px-6 bg-green-50 shadow-md">
+    <header className="w-full py-4 px-6 bg-green-50 shadow-md relative z-50">
       <div className="flex justify-between items-center">
         
         <div className="text-xl font-bold">
