@@ -109,7 +109,7 @@ export default function AddEntryModal({
 
           <input
             name="arecunent"
-            placeholder="Arecunent (Reason)"
+            placeholder="Arecanut (in Kg)"
             value={form.arecunent}
             onChange={handleChange}
             className="w-full border p-2 rounded"

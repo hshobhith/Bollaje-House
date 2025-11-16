@@ -35,7 +35,7 @@ export default function EntryTable({ entries, onEdit, onDelete, pricePerKg }: En
           <th className="p-2">Date</th>
           <th className="p-2">Name</th>
           <th className="p-2">Phone</th>
-          <th className="p-2">Arecanent</th>
+          <th className="p-2">Arecanut</th>
           <th className="p-2">Amount</th>
           <th className="p-2">Actions</th>
         </tr>
