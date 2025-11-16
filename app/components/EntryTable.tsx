@@ -12,7 +12,7 @@ type EntryTableProps = {
 
 export default function EntryTable({ entries, onEdit, onDelete, pricePerKg }: EntryTableProps) {
   const sendWhatsApp = (entry: BillingEntry) => {
-    const msg = `Hello ${entry.name},\n\n This is the Details of Arecanut Dehusking\n Date : ${entry.date}\n Total Arecanut (in Kg) : ${entry.arecunent}\n Dehusking Price(Per Kg) : ${pricePerKg} \n Total Amount: ₹${entry.amount}`;
+    const msg = `Hello ${entry.name},\n\n This is the Details of Arecanut Dehusking\n Date : ${entry.date}\n Total Arecanut (in Kg) : ${entry.arecunent}\n Dehusking Price(Per Kg) : ${pricePerKg} \n Total Amount: ₹${entry.amount} \n\nThanks for visiting.\nHarshith B N\nBollaje Arecanut De-husking.`;
     const url = `https://wa.me/${entry.phone}?text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank");
   };
@@ -23,7 +23,10 @@ export default function EntryTable({ entries, onEdit, onDelete, pricePerKg }: En
     Date : ${entry.date}
     Total Arecanut (in Kg) : ${entry.arecunent}
     Dehusking Price(Per Kg) : ${pricePerKg}
-    Total Amount: ₹${entry.amount}`;
+    Total Amount: ₹${entry.amount}
+    Thanks for visiting.
+    Harshith B N
+    Bollaje Arecanut De-husking.`;
     const smsUrl = `sms:${entry.phone}?body=${encodeURIComponent(msg)}`;
     window.location.href = smsUrl;
 };

@@ -25,6 +25,7 @@ export default function DashboardPage() {
   const [open, setOpen] = useState(false);  
   const [editEntry, setEditEntry] = useState<BillingEntry | null>(null);
   const [pricePerKg, setPricePerKg] = useState(10);
+  const [loading, setLoading] = useState(true);
 
     useEffect(() => {
     fetch(`${API_URL}/api/price`)
@@ -33,9 +34,13 @@ export default function DashboardPage() {
     }, []);
 
   useEffect(() => {
+    setLoading(true);
     fetch( `${API_URL}/api/billing` )
         .then((res) => res.json())
-        .then((data) => setEntries(data));
+        .then((data) => {
+          setEntries(data);      
+          setLoading(false); 
+        })
     }, []);
 
     const handleAdd = async (data: BillingEntry) => {
@@ -156,15 +161,21 @@ export default function DashboardPage() {
         handleClear={handleClear}
         />
 
-      <EntryTable
-        entries={entries}
-        onEdit={(item: BillingEntry) => {
-          setEditEntry(item);
-          setOpen(true);
-        }}
-        onDelete={handleDelete}
-        pricePerKg={pricePerKg}
-      />
+        {loading ? (
+          <div className="flex justify-center items-center py-10">
+            <div className="animate-spin h-10 w-10 border-4 border-blue-500 border-t-transparent rounded-full"></div>
+          </div>
+        ) : (
+          <EntryTable
+            entries={entries}
+            onEdit={(item: BillingEntry) => {
+              setEditEntry(item);
+              setOpen(true);
+            }}
+            onDelete={handleDelete}
+            pricePerKg={pricePerKg}
+          />
+        )}
 
       <TotalAmount entries={entries} />
 
