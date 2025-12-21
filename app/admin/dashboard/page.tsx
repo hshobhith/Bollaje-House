@@ -89,7 +89,7 @@ export default function DashboardPage() {
 
     const handleMonthFilter = (year: number, month: number) => {
         const filtered = entries.filter((e) => {
-            const d = new Date(e.date);
+            const d = parseDMY(e.date);
             return d.getFullYear() === year && d.getMonth() + 1 === month;
         });
 
